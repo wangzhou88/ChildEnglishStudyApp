@@ -14,10 +14,10 @@ jobs:
     - name: Checkout代码
       uses: actions/checkout@v4
     
-    - name: 设置JDK 11
+    - name: 设置JDK 17
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
+        java-version: '17'
         distribution: 'temurin'
     
     - name: 手动设置Android SDK环境
