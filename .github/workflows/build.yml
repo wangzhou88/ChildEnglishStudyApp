@@ -1,13 +1,16 @@
-name: Build APK
+name: Android CI/CD
 
 on:
   push:
-    branches: [ main ]
-    paths-ignore:
-      - 'README.md'
-      - '*.md'
+    branches: [ main, develop ]
+    paths:
+      - 'app/**'
+      - 'build.gradle'
+      - 'settings.gradle'
+      - 'gradle.properties'
+      - '.github/workflows/**'
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
   build:
@@ -23,17 +26,18 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     
-    - name: 手动设置Android SDK环境
-      run: |
-        echo "ANDROID_HOME=/usr/local/lib/android/sdk" >> $GITHUB_ENV
-        echo "PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/34.0.0" >> $GITHUB_ENV
-        echo "ANDROID_HOME: $ANDROID_HOME"
-        
-    - name: 安装SDK组件
-      run: |
-        sdkmanager --version
-        yes | sdkmanager --licenses
-        sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+    - name: 设置Android SDK
+      uses: android-actions/setup-android@v2
+    
+    - name: 缓存Gradle依赖
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
     
     - name: 授权Gradle执行
       run: chmod +x gradlew
@@ -41,8 +45,22 @@ jobs:
     - name: 构建Debug APK
       run: ./gradlew assembleDebug
     
-    - name: 上传APK文件
+    - name: 构建Release APK
+      run: ./gradlew assembleRelease
+      continue-on-error: true
+    
+    - name: 上传Debug APK
       uses: actions/upload-artifact@v4
+      if: success() || failure()
       with:
         name: app-debug
         path: app/build/outputs/apk/debug/app-debug.apk
+        retention-days: 7
+    
+    - name: 上传Release APK
+      uses: actions/upload-artifact@v4
+      if: success() || failure()
+      with:
+        name: app-release
+        path: app/build/outputs/apk/release/app-release.apk
+        retention-days: 7
