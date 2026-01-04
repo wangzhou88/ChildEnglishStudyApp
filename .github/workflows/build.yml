@@ -20,8 +20,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     
-    - name: 设置Android SDK
-      uses: android-actions/setup-android@v2
+    - name: 安装Android SDK组件
+      run: |
+        yes | sdkmanager --licenses
+        sdkmanager "platform-tools" "platforms;android-32" "build-tools;32.0.0"
     
     - name: 授权Gradle执行
       run: chmod +x gradlew
