@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tv_app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_grammar_learning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="语法学习"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/btn_special_practice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/special_practice"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/btn_score_system"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/score_system"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/btn_parent_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/parent_mode"
+        android:textSize="18sp"
+        android:padding="16dp"/>
+
+</LinearLayout>

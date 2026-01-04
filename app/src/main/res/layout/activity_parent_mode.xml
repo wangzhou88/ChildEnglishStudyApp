@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/parent_mode"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:id="@+id/tv_today_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="今日学习时长：0分0秒"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_max_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="每日最大学习时长：30分钟"
+        android:textSize="18sp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btn_set_max_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置最大学习时间"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/btn_reset_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="重置今日学习时长"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/btn_change_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="修改家长密码"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/btn_back_to_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+</LinearLayout>

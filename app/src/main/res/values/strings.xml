@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">儿童英语学习</string>
+    
+    <!-- Grammar Learning -->
+    <string name="grammar_prev">上一个</string>
+    <string name="grammar_next">下一个</string>
+    <string name="grammar_finish">完成学习</string>
+    <string name="grammar_progress">进度：%1$d/%2$d</string>
+    
+    <!-- Parent Mode -->
+    <string name="parent_mode">家长模式</string>
+    <string name="parent_password">请输入家长密码</string>
+    <string name="parent_confirm">确认</string>
+    <string name="parent_cancel">取消</string>
+    
+    <!-- Score System -->
+    <string name="score">积分</string>
+    <string name="score_exchange">积分兑换</string>
+    <string name="current_score">当前积分：%1$d</string>
+    <string name="score_system">积分系统</string>
+    
+    <!-- Special Practice -->
+    <string name="special_practice">专项练习</string>
+    <string name="practice_vocabulary">词汇练习</string>
+    <string name="practice_grammar">语法练习</string>
+    <string name="practice_reading">阅读练习</string>
+    
+    <!-- Common -->
+    <string name="back">返回</string>
+    <string name="home">主页</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="loading">加载中...</string>
+    
+</resources>

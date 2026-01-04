@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/score_exchange"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="兑换奖励：精美贴纸一套\n所需积分：10分\n\n恭喜您完成了语法学习任务！\n可以兑换精美奖励啦！"
+        android:textSize="16sp"
+        android:lineSpacingExtra="8dp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btn_exchange_reward"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确认兑换"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        android:backgroundTint="@android:color/holo_orange_light"/>
+
+    <Button
+        android:id="@+id/btn_back_to_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回积分页面"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+</LinearLayout>
